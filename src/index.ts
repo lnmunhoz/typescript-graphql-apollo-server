@@ -4,6 +4,9 @@ import * as fs from "fs";
 import { ApolloServer, makeExecutableSchema } from "apollo-server-express";
 import { prisma } from "./generated/prisma-client";
 import resolvers from "./resolvers";
+import { checkEnvVar } from "./utils";
+
+checkEnvVar("PRISMA_ENDPOINT");
 
 const app = express();
 const schema = makeExecutableSchema({
