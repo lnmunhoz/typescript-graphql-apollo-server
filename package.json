@@ -6,7 +6,8 @@
     "build": "rimraf dist && tsc",
     "prisma:deploy": "prisma deploy",
     "prisma:reset": "prisma reset",
-    "prisma:seed": "prisma seed"
+    "prisma:seed": "prisma seed",
+    "codegen": "gql-gen"
   },
   "dependencies": {
     "apollo-server-express": "2.4.8",

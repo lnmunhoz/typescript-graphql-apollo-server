@@ -10,7 +10,7 @@
 ## Features
 
 - **Scalable GraphQL server:** The server uses [`apollo-server-express`](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-expressa)
-- **Static type generation**: TypeScript types for GraphQL queries & mutations are generated in a build step
+- **Static type generation**: TypeScript types for GraphQL queries & mutations are generated in a build step and [`graphql-code-generator`](https://github.com/dotansimha/graphql-code-generator) for generating types for resolvers
 - **Authentication**: Signup and login workflows are ready to use for your users
 - **GraphQL database:** Includes GraphQL database binding to [Prisma](https://www.prismagraphql.com) (running on MySQL)
 - **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
@@ -37,6 +37,8 @@ yarn start
 - `yarn start` starts GraphQL server on `http://localhost:4000`
 - `yarn prisma:deploy` Deploys the Prisma service to the cluster
 - `yarn prisma:reset` Resets the database
+- `yarn prisma:seed` Seed the database with data found in `prisma/seed.graphql`
+- `yarn codegen` Generate resolver types based on the `src/schema.graphql`
 
 ### Project structure
 
