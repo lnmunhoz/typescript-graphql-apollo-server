@@ -1,0 +1,13 @@
+schema: src/schema.graphql
+overwrite: true
+generates:
+  ./src/generated/codegen.ts:
+    config:
+      contextType: ../utils#Context
+      mappers:
+        Post: ./prisma-client#Post
+        User: ./prisma-client#User
+    plugins:
+      - typescript-common
+      - typescript-server
+      - typescript-resolvers

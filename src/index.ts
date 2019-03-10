@@ -1,5 +1,4 @@
 import * as express from "express";
-import * as path from "path";
 import * as fs from "fs";
 import { ApolloServer, makeExecutableSchema } from "apollo-server-express";
 import { prisma } from "./generated/prisma-client";

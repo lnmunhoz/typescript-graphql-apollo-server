@@ -1,7 +1,7 @@
-import { Context } from '../utils'
+import { UserResolvers } from "../generated/codegen";
 
-export const User = {
-  posts: ({ id }, args, ctx: Context) => {
-    return ctx.prisma.user({ id }).posts()
-  },
-}
+export const User: UserResolvers.Resolvers = {
+  posts: ({ id }, args, ctx) => {
+    return ctx.prisma.user({ id }).posts();
+  }
+};

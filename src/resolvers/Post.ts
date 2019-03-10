@@ -1,7 +1,7 @@
-import { Context } from '../utils'
+import { PostResolvers } from "../generated/codegen";
 
-export const Post = {
-  author: ({ id }, args, ctx: Context) => {
-    return ctx.prisma.post({ id }).author()
-  },
-}
+export const Post: PostResolvers.Resolvers = {
+  author: ({ id }, args, ctx) => {
+    return ctx.prisma.post({ id }).author();
+  }
+};

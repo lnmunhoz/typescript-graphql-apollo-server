@@ -5,7 +5,8 @@
     "debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
     "build": "rimraf dist && tsc",
     "prisma:deploy": "prisma deploy",
-    "prisma:reset": "prisma reset"
+    "prisma:reset": "prisma reset",
+    "prisma:seed": "prisma seed"
   },
   "dependencies": {
     "apollo-server-express": "2.4.8",
@@ -19,6 +20,10 @@
     "@types/bcryptjs": "2.4.2",
     "@types/node": "10.12.30",
     "dotenv-cli": "1.4.0",
+    "graphql-code-generator": "0.18.0",
+    "graphql-codegen-typescript-common": "0.18.0",
+    "graphql-codegen-typescript-resolvers": "0.18.0",
+    "graphql-codegen-typescript-server": "0.18.0",
     "nodemon": "1.18.10",
     "prisma": "1.28.1",
     "rimraf": "2.6.3",
