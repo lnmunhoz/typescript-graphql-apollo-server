@@ -12,6 +12,12 @@ export interface Query {
   post?: Maybe<Post>;
 
   me?: Maybe<User>;
+
+  fetchWebsites: boolean;
+
+  searchItems: boolean;
+
+  searchUsers: User[];
 }
 
 export interface Post {
@@ -46,6 +52,10 @@ export interface Mutation {
   publish: Post;
 
   deletePost: Post;
+
+  technologies: User;
+
+  updateProfile: boolean;
 }
 
 export interface AuthPayload {
@@ -153,6 +163,12 @@ export namespace QueryResolvers {
     post?: PostResolver<Maybe<Post>, TypeParent, TContext>;
 
     me?: MeResolver<Maybe<User>, TypeParent, TContext>;
+
+    fetchWebsites?: FetchWebsitesResolver<boolean, TypeParent, TContext>;
+
+    searchItems?: SearchItemsResolver<boolean, TypeParent, TContext>;
+
+    searchUsers?: SearchUsersResolver<User[], TypeParent, TContext>;
   }
 
   export type FeedResolver<
@@ -176,6 +192,21 @@ export namespace QueryResolvers {
 
   export type MeResolver<
     R = Maybe<User>,
+    Parent = {},
+    TContext = Context
+  > = Resolver<R, Parent, TContext>;
+  export type FetchWebsitesResolver<
+    R = boolean,
+    Parent = {},
+    TContext = Context
+  > = Resolver<R, Parent, TContext>;
+  export type SearchItemsResolver<
+    R = boolean,
+    Parent = {},
+    TContext = Context
+  > = Resolver<R, Parent, TContext>;
+  export type SearchUsersResolver<
+    R = User[],
     Parent = {},
     TContext = Context
   > = Resolver<R, Parent, TContext>;
@@ -265,6 +296,10 @@ export namespace MutationResolvers {
     publish?: PublishResolver<Post, TypeParent, TContext>;
 
     deletePost?: DeletePostResolver<Post, TypeParent, TContext>;
+
+    technologies?: TechnologiesResolver<User, TypeParent, TContext>;
+
+    updateProfile?: UpdateProfileResolver<boolean, TypeParent, TContext>;
   }
 
   export type SignupResolver<
@@ -319,6 +354,17 @@ export namespace MutationResolvers {
   export interface DeletePostArgs {
     id: string;
   }
+
+  export type TechnologiesResolver<
+    R = User,
+    Parent = {},
+    TContext = Context
+  > = Resolver<R, Parent, TContext>;
+  export type UpdateProfileResolver<
+    R = boolean,
+    Parent = {},
+    TContext = Context
+  > = Resolver<R, Parent, TContext>;
 }
 
 export namespace AuthPayloadResolvers {

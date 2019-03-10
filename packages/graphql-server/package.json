@@ -1,0 +1,37 @@
+{
+  "name": "@graphql-server/server",
+  "license": "MIT",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
+    "debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
+    "build": "rimraf dist && tsc",
+    "prisma:deploy": "prisma deploy",
+    "prisma:reset": "prisma reset",
+    "prisma:seed": "prisma seed",
+    "codegen": "gql-gen"
+  },
+  "dependencies": {
+    "apollo-server-express": "2.4.8",
+    "bcryptjs": "2.4.3",
+    "express": "4.16.4",
+    "jsonwebtoken": "8.5.0",
+    "prisma-client-lib": "1.28.1"
+  },
+  "devDependencies": {
+    "@graphql-server/cli": "0.0.0",
+    "@types/bcryptjs": "2.4.2",
+    "@types/node": "10.12.30",
+    "dotenv-cli": "1.4.0",
+    "graphql": "14.1.1",
+    "graphql-code-generator": "0.18.0",
+    "graphql-codegen-typescript-common": "0.18.0",
+    "graphql-codegen-typescript-resolvers": "0.18.0",
+    "graphql-codegen-typescript-server": "0.18.0",
+    "nodemon": "1.18.10",
+    "prisma": "1.28.1",
+    "rimraf": "2.6.3",
+    "ts-node": "7.0.1",
+    "typescript": "3.2.2"
+  }
+}

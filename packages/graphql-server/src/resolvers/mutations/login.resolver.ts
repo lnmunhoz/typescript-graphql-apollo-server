@@ -1,21 +1,6 @@
 import * as bcrypt from "bcryptjs";
 import * as jwt from "jsonwebtoken";
-import { Context } from "../../utils";
 import { MutationResolvers } from "../../generated/codegen";
-
-const signup: MutationResolvers.SignupResolver = async (
-  parent,
-  args,
-  ctx: Context
-) => {
-  const password = await bcrypt.hash(args.password, 10);
-  const user = await ctx.prisma.createUser({ ...args, password });
-
-  return {
-    token: jwt.sign({ userId: user.id }, process.env.APP_SECRET),
-    user
-  };
-};
 
 const login: MutationResolvers.LoginResolver = async (
   parent,
@@ -38,7 +23,4 @@ const login: MutationResolvers.LoginResolver = async (
   };
 };
 
-export const auth = {
-  signup,
-  login
-};
+export default login;

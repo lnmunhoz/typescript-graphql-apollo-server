@@ -1,17 +1,13 @@
-import { Query } from "./Query";
+import Query from "./Query";
+import Mutation from "./Mutation";
 import { Subscription } from "./Subscription";
-import { auth } from "./Mutation/auth";
-import { post } from "./Mutation/post";
 import { User } from "./User";
 import { Post } from "./Post";
 import { IResolvers } from "../generated/codegen";
 
 const resolvers: IResolvers = {
   Query,
-  Mutation: {
-    ...auth,
-    ...post
-  },
+  Mutation,
   Subscription,
   User,
   Post
