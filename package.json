@@ -1,0 +1,28 @@
+{
+  "name": "typescript-graphql-apollo-server",
+  "scripts": {
+    "start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
+    "debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
+    "build": "rimraf dist && tsc",
+    "prisma:deploy": "prisma deploy",
+    "prisma:reset": "prisma reset"
+  },
+  "dependencies": {
+    "apollo-server-express": "2.4.8",
+    "bcryptjs": "2.4.3",
+    "express": "4.16.4",
+    "graphql": "14.1.1",
+    "jsonwebtoken": "8.5.0",
+    "prisma-client-lib": "1.28.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.2",
+    "@types/node": "10.12.30",
+    "dotenv-cli": "1.4.0",
+    "nodemon": "1.18.10",
+    "prisma": "1.28.1",
+    "rimraf": "2.6.3",
+    "ts-node": "7.0.1",
+    "typescript": "3.2.2"
+  }
+}
