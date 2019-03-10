@@ -1,4 +1,7 @@
-<h1 align="center"><strong>Boilerplate for an Advanced GraphQL Server w/ TypeScript</strong></h1>
+[![CircleCI](https://circleci.com/gh/lnmunhoz/typescript-graphql-apollo-server.svg?style=svg)](https://circleci.com/gh/lnmunhoz/typescript-graphql-apollo-server)
+
+<h1 align="center"><strong>Boilerplate for an Advanced GraphQL Server w/ TypeScript</strong>
+</h1>
 
 <br />
 
